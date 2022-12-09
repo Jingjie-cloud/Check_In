@@ -7,6 +7,7 @@ password = sys.argv[2] # 登录密码
 @retry(stop_max_attempt_number=5)
 def sockboom():
   try:
+    driver = get_web_driver()
     driver.get("https://sockboom.bar/auth/login")
     driver.find_element_by_xpath("//*[@id='email']").click()
     driver.find_element_by_xpath("//*[@id='email']").send_keys('349814342@qq.com')
