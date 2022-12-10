@@ -9,13 +9,15 @@ def sockboom():
   try:
     driver = get_web_driver()
     driver.get("https://sockboom.bar/auth/login")
-    driver.find_element_by_xpath("//*[@id='email']").click()
+    time.sleep(1)
+    driver.find_element_by_xpath("//*[@id='email'] and @type='email'").click()
     driver.find_element_by_xpath("//*[@id='email']").send_keys('username')
+    driver.find_element_by_xpath("//*[@id='passwd'] and @type='passwd'").click()
     driver.find_element_by_xpath("//*[@id='passwd']").send_keys('password')
     driver.find_element_by_xpath("//*[@id='login']").click()
-    time.sleep(3)
+    time.sleep(2)
     driver.find_element_by_xpath("//*[@style='display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;']").click()
-    time.sleep(3)
+    time.sleep(2)
     try:
       driver.find_element_by_xpath("//*[@class='i-button button-check']").click()
     except:
