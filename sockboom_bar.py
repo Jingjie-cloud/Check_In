@@ -25,7 +25,7 @@ def sockboom():
     sure = driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button")#看看有没有 ‘DNS投毒’的‘确认’
     ActionChains(driver).move_to_element(sure).click().perform()
     
-    chick_in = driver.find_element_by_css_selector("[id='checkin'][class='i-button button-check']")
+    chick_in = driver.find_element_by_css_selector("div.card-action-btn pull-left>p>button")
     ActionChains(driver).move_to_element(chick_in).click().perform()
     
     
