@@ -15,17 +15,18 @@ def sockboom():
     driver.find_element_by_xpath("//*[@id='passwd' and @type='password']").click()
     driver.find_element_by_xpath("//*[@id='passwd' and @type='password']").send_keys('password')
     driver.find_element_by_xpath("//*[@class='btn btn-rose btn-simple btn-wd btn-lg']").click()
-    time.sleep(2)
-    driver.find_element_by_xpath("//*[@style='display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;']").click()
+    time.sleep(3)
+    #driver.find_element_by_xpath("//*[@style='display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;']").click()
+    driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button").click()
     time.sleep(2)
     try:
       driver.find_element_by_xpath("//*[@class='i-button button-check']").click()
     except:
       driver.find_element_by_xpath("//*[@style='display: inline-block; background-color: rgb(77, 155, 255); box-shadow: rgba(77, 155, 255, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;']").click()
-    time.sleep(3)
-    chick_in = driver.find_element_by_xpath("//*[@class='i-button button-check']")
-    ActionChains(driver).move_to_element(chick_in).perform()
-    chick_in.click()
+      time.sleep(3)
+      chick_in = driver.find_element_by_xpath("//*[@class='i-button button-check']")
+      ActionChains(driver).move_to_element(chick_in).perform()
+      chick_in.click()
   except:
     raise
   finally:
