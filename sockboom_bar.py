@@ -25,10 +25,10 @@ def sockboom():
     except:
       #driver.find_element_by_xpath("//*[@style='display: inline-block; background-color: rgb(77, 155, 255); box-shadow: rgba(77, 155, 255, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;']").click()
       driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button").click()
+      
       driver.implicitly_wait(3)
       chick_in = driver.find_element_by_xpath("/html/body/div[1]/div[2]/main/section/div/section[2]/div/div[2]/div[2]/div/div[2]/div/p/button")
-      ActionChains(driver).move_to_element(chick_in).perform()
-      chick_in.click()
+      ActionChains(driver,5).move_to_element(chick_in).chick(chink_in).perform()
   except:
     raise
   finally:
