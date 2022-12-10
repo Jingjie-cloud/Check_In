@@ -8,6 +8,7 @@ password = sys.argv[2] # 登录密码
 def sockboom():
   try:
     driver = get_web_driver()
+    driver.maximize_window()
     driver.get("https://sockboom.bar/auth/login")
     driver.implicitly_wait(3)
     driver.find_element_by_xpath("//*[@id='email' and @type='email']").click()
@@ -27,7 +28,8 @@ def sockboom():
       driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button").click()
       driver.implicitly_wait(3)
       chick_in = driver.find_element_by_xpath("/html/body/div[1]/div[2]/main/section/div/section[2]/div/div[2]/div[2]/div/div[2]/div/p/button")
-      ActionChains(driver).move_to_element(chick_in).chick(chink_in).perform()
+      chick_in.click()
+      #ActionChains(driver).move_to_element(chick_in).chick(chink_in).perform()
   except:
     raise
   finally:
