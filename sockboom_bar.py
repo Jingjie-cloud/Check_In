@@ -26,7 +26,8 @@ def sockboom():
     ActionChains(driver).move_to_element(sure).click().perform()
     
     chick_in = driver.find_element_by_css_selector("div.card>card-main>card-action>card-action-btn pull-left>p>button")
-    ActionChains(driver).click(chick_in).perform()
+    chick_in = driver.find_elements(By.CSS_SELECTOR, 'a[class="i-button button-check"]')
+    ActionChains(driver).move_to_element(chick_in).click().perform()
     
     
     #try:
