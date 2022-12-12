@@ -7,7 +7,7 @@ password = sys.argv[2] # 登录密码
 @retry(stop_max_attempt_number=5)
 def sockboom():
   try:
-#     driver = get_web_driver()
+    driver = get_web_driver()
     driver.maximize_window()
     driver.get("https://sockboom.bar/auth/login")
     driver.implicitly_wait(3)
@@ -26,8 +26,10 @@ def sockboom():
     sure = driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button")#看看有没有 ‘DNS投毒’的‘确认’
     ActionChains(driver).move_to_element(sure).click().perform()
     driver.implicitly_wait(3)
-    driver.execute_script("window.scrollBy(0,1000)")
-    driver.find_element_by_xpath("//*[@class='i-button button-check']").click()
+    
+    driver.execute_script("arguments[0].scrollIntoView();", driver.find_element_by_xpath("//*[@class='i-button button-check']")).click()
+#     driver.execute_script("window.scrollBy(0,1000)")
+#     driver.find_element_by_xpath("//*[@class='i-button button-check']").click()
 #     driver.execute_script("arguments[0].scrollIntoView();", chick_in)
 #     driver.implicitly_wait(3)
 #     chick_in.click()
@@ -48,5 +50,4 @@ def sockboom():
   finally:
     driver.quit()
 if __name__ == '__main__':
-  driver = webdriver.Chrome()
   sockboom()
