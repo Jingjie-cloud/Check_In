@@ -28,7 +28,7 @@ def sockboom():
 #     ActionChains(driver).move_to_element(sure).click().perform()
     driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button").click()
     driver.implicitly_wait(3)
-    driver.find_element_by_xpath("//*[@id="clash"]/div/span[4]").click()
+    driver.find_element_by_xpath("//*[@id='clash']/div/span[4]").click()
     
     
     
