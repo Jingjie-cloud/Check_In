@@ -40,9 +40,6 @@ jobs:
         uses: nanasess/setup-chromedriver@v1
         
       - name: 'Working'
-        env: 
-          SKB_USERNAME: ${{ secrets.SKB_USERNAME }}
-          SKB_PASSWORD: ${{ secrets.SKB_PASSWORD }}
         run: |
           # sudo cp -p ./chromedriver /usr/bin/
           # chmod -R 777 /usr/bin/chromedriver
