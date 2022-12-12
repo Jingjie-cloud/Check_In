@@ -7,7 +7,7 @@ password = sys.argv[2] # 登录密码
 @retry(stop_max_attempt_number=5)
 def sockboom():
   try:
-    driver = get_web_driver()
+#     driver = get_web_driver()
     driver.maximize_window()
     driver.get("https://sockboom.bar/auth/login")
     driver.implicitly_wait(3)
@@ -48,4 +48,5 @@ def sockboom():
   finally:
     driver.quit()
 if __name__ == '__main__':
+  driver = webdriver.Chrome()
   sockboom()
