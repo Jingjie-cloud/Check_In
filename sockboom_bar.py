@@ -31,7 +31,7 @@ def sockboom():
 #     ActionChains(driver).move_to_element(sure).click().perform()
     driver.refresh()
     driver.implicitly_wait(3)
-    driver.find_element_by_xpath("i-button button-check").click()
+    driver.find_element_by_xpath("//*[@class='i-button button-check']").click()
     
     
     
