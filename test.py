@@ -24,6 +24,4 @@ def v2ex():
         driver.quit()
 
 if __name__ == '__main__':
-#     v2ex()
-    print(username)
-    print(password)
+    v2ex()
