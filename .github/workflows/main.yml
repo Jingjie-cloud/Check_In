@@ -40,9 +40,9 @@ jobs:
         uses: nanasess/setup-chromedriver@v1
         
       - name: 'Working'
-#         env: 
-#           EMAIL: ${{ secrets.EMAIL }}
-#           PASSWORD: ${{ secrets.PASSWORD }}
+        env: 
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: |
           # sudo cp -p ./chromedriver /usr/bin/
           # chmod -R 777 /usr/bin/chromedriver
@@ -53,6 +53,4 @@ jobs:
           # python ./moyupai.py  ${{ secrets.MOYUPAI_USERNAME }} ${{ secrets.MOYUPAI_PASSWORD }}
           # python ./v2ex.py  ${{ secrets.V2EX_USERNAME }} ${{ secrets.V2EX_PASSWORD }}
           # python ./91.py       ${{ secrets.WII_USERNAME}} ${{secrets.WII_PASSWORD}}
-          echo ${{ secrets.EMAIL }} ${{ secrets.PASSWORD }}
-          python ./test.py ${{ secrets.EMAIL }} ${{ secrets.PASSWORD }}
-          #python ./sockboom_bar.py ${{ secrets.EMAIL }} PASSWORD: ${{ secrets.PASSWORD }}
+          python ./sockboom_bar.py
