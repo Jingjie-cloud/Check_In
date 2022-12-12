@@ -5,11 +5,6 @@ import time
 username = sys.argv[1] # 登录账号
 password = sys.argv[2] # 登录密码
 
-# username = os.environ["SKB_USERNAME"] # 登录账号
-# password = os.environ["SKB_PASSWORD"] # 登录密码
-
-print(username)
-print(password)
 
 @retry(stop_max_attempt_number=5)
 def sockboom():
@@ -28,7 +23,6 @@ def sockboom():
     driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button").click()
     driver.implicitly_wait(3)
     time.sleep(3)
-    print(driver.find_element_by_id("catcat").text)
     #chick_in = driver.find_element_by_xpath("/html/body/div[1]/div[2]/main/section/div/section[2]/div/div[2]/div[2]/div/div[2]/div/p/button")
     
 #     sure = driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button")#看看有没有 ‘DNS投毒’的‘确认’
