@@ -2,11 +2,11 @@ from util import *
 import os
 import time
 
-#username = sys.argv[1] # 登录账号
-#password = sys.argv[2] # 登录密码
+username = sys.argv[1] # 登录账号
+password = sys.argv[2] # 登录密码
 
-username = os.environ["SKB_USERNAME"] # 登录账号
-password = os.environ["SKB_PASSWORD"] # 登录密码
+# username = os.environ["SKB_USERNAME"] # 登录账号
+# password = os.environ["SKB_PASSWORD"] # 登录密码
 
 print(username)
 print(password)
@@ -18,9 +18,9 @@ def sockboom():
     driver.maximize_window()
     driver.get("https://sockboom.bar/auth/login")
     driver.implicitly_wait(3)
-    driver.find_element_by_xpath("//*[@id='email' and @type='email']").click(username)
-    driver.find_element_by_xpath("//*[@id='email' and @type='email']").send_keys()
-    driver.find_element_by_xpath("//*[@id='passwd' and @type='password']").click()
+#     driver.find_element_by_xpath("//*[@id='email' and @type='email']").click()
+    driver.find_element_by_xpath("//*[@id='email' and @type='email']").send_keys(username)
+#     driver.find_element_by_xpath("//*[@id='passwd' and @type='password']").click()
     driver.find_element_by_xpath("//*[@id='passwd' and @type='password']").send_keys(password)
     driver.find_element_by_xpath("//*[@class='btn btn-rose btn-simple btn-wd btn-lg']").click()
     driver.implicitly_wait(3)
