@@ -25,7 +25,7 @@ def sockboom():
     
 #     sure = driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button")#看看有没有 ‘DNS投毒’的‘确认’
 #     ActionChains(driver).move_to_element(sure).click().perform()
-    driver.find_element_by_xpath("/html/body/div[3]/div[7]/div/button").click()
+    driver.find_element_by_xpath("//*[@class='confirm']").click()
     driver.implicitly_wait(3)
     
 #     print(driver.find_element_by_xpath("//*[@class='i-button button-check']").is_enabled())
