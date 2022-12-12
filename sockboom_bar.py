@@ -1,8 +1,15 @@
 from util import *
+import os
 import time
 
-username = sys.argv[1] # 登录账号
-password = sys.argv[2] # 登录密码
+#username = sys.argv[1] # 登录账号
+#password = sys.argv[2] # 登录密码
+
+username = os.environ["SKB_USERNAME"] # 登录账号
+password = os.environ["SKB_PASSWORD"] # 登录密码
+
+print(username)
+print(password)
 
 @retry(stop_max_attempt_number=5)
 def sockboom():
