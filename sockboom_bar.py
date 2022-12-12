@@ -6,6 +6,8 @@ import time
 # password = sys.argv[2] # 登录密码
 username = os.environ['EMAIL']
 password = os.environ['PASSWORD']
+print(username)
+print(password)
 
 
 @retry(stop_max_attempt_number=5)
@@ -15,7 +17,7 @@ def sockboom():
     driver.maximize_window()
     driver.get("https://sockboom.bar/auth/login")
     driver.implicitly_wait(3)
-#     driver.find_element_by_xpath("//*[@id='email' and @type='email']").click()
+#     driver.find_element_by_xpath("//*[@id='email' and @type='email']").click(username)
     driver.find_element_by_xpath("//*[@id='email' and @type='email']").send_keys(username)
 #     driver.find_element_by_xpath("//*[@id='passwd' and @type='password']").click()
     driver.find_element_by_xpath("//*[@id='passwd' and @type='password']").send_keys(password)
