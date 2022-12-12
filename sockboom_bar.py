@@ -27,7 +27,7 @@ def sockboom():
     ActionChains(driver).move_to_element(sure).click().perform()
     driver.implicitly_wait(3)
     
-    print(driver.find_element_by_xpath("//*[@class='i-button button-check']").is_enabled())
+#     print(driver.find_element_by_xpath("//*[@class='i-button button-check']").is_enabled())
     
 #     driver.execute_script("document.body.style.zoom='0.5'")
 #     driver.execute_script("arguments[0].scrollIntoView();", driver.find_element_by_xpath("//*[@class='i-button button-check']")).click()
