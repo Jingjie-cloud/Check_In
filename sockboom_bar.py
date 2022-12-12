@@ -2,12 +2,10 @@ from util import *
 import os
 import time
 
-# username = sys.argv[1] # 登录账号
-# password = sys.argv[2] # 登录密码
-username = os.environ['EMAIL']
-password = os.environ['PASSWORD']
-print(username)
-print(password)
+username = sys.argv[1] # 登录账号
+password = sys.argv[2] # 登录密码
+# username = os.environ['EMAIL']
+# password = os.environ['PASSWORD']
 
 
 @retry(stop_max_attempt_number=5)
