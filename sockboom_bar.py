@@ -14,7 +14,7 @@ def sockboom():
     driver = get_web_driver()
     driver.maximize_window()
     
-    driver.get("https://sockboom.link/auth/login")
+    driver.get("https://sockboom.id/auth/login")
     
     driver.implicitly_wait(3)
 #     driver.find_element_by_xpath("//*[@id='email' and @type='email']").click(username)
